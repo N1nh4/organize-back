@@ -1,5 +1,6 @@
 package com.example.organize.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -21,10 +22,10 @@ public class Atividade {
     private String nome;
     private String descricao;
     private String status;
-    private String obsercacao;
+    private String observacao;
 
     @OneToMany(mappedBy = "atividade", cascade = jakarta.persistence.CascadeType.ALL, fetch = jakarta.persistence.FetchType.LAZY)
-    private List<AtividadeColuna> colunas;
+    private List<AtividadeColuna> colunas = new ArrayList<>();
 
     @ManyToOne(fetch = jakarta.persistence.FetchType.LAZY)
     @JoinColumn(name = "id_usuario")
