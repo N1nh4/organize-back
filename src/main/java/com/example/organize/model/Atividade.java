@@ -1,5 +1,6 @@
 package com.example.organize.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class Atividade {
     private String descricao;
     private String status;
     private String observacao;
+    private LocalDateTime dataCriacao;
 
     @OneToMany(mappedBy = "atividade", cascade = jakarta.persistence.CascadeType.ALL, fetch = jakarta.persistence.FetchType.LAZY)
     private List<AtividadeColuna> colunas = new ArrayList<>();

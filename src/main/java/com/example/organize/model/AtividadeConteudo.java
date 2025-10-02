@@ -1,5 +1,6 @@
 package com.example.organize.model;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
@@ -25,6 +26,7 @@ public class AtividadeConteudo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String conteudo;
+    private LocalDateTime dataCriacao;  
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_atividade_coluna")

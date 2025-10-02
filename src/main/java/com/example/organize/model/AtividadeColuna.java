@@ -1,5 +1,6 @@
 package com.example.organize.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -29,6 +30,7 @@ public class AtividadeColuna {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String nome;
+    private LocalDateTime dataCriacao;  
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_atividade")
