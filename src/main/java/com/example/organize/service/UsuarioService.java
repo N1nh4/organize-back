@@ -23,9 +23,9 @@ public class UsuarioService {
         return usuarioRepository.save(usuario);
     }
 
-    // Buscar usuário por email para o login
-    public Usuario buscarPorEmail(String email) {
-        return usuarioRepository.findByEmail(email).orElse(null);
+    // Buscar usuário por email e senha para o login
+    public Usuario login(String email, String senha) {
+        return usuarioRepository.findByEmail(email).filter(u -> u.getSenha().equals(senha)).orElse(null);
     }
 
     // Buscar todos os usuários

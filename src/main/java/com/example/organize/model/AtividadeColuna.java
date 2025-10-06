@@ -30,6 +30,7 @@ public class AtividadeColuna {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String nome;
+    private String status;
     private LocalDateTime dataCriacao;  
 
     @ManyToOne(fetch = FetchType.LAZY)

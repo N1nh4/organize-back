@@ -26,6 +26,7 @@ public class AtividadeConteudo {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String conteudo;
+    private String descricao;
     private LocalDateTime dataCriacao;  
 
     @ManyToOne(fetch = FetchType.LAZY)
